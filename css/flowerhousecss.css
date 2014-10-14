@@ -1,0 +1,134 @@
+.html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	background: #e1e2e4;
+	font-family: Arial Regular;
+}
+
+.top-bar {
+	height: 20px;
+	width: 100%;
+	background: #fff;
+	margin-left: -9px;
+}
+
+.list-clean, a{
+	text-decoration: none;
+	list-style-type: none;
+	font-size: 14px;
+	display: inline-block;
+}
+
+.list-left li {
+	float: left;
+}
+
+.nav-list {
+	float: right;
+	margin: 35px 0px 0px 0px;
+}
+
+.nav-list li {
+	margin-left: 50px;
+	color: #7b588e;
+}
+
+#layout-container {
+	width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+	
+}
+
+#header-container {
+	height: 120px;
+	width: 1000px;
+}
+
+.logo-container {
+	background: url("../img/logo.png");
+	height: 77px;
+	width: 210px;
+	display: inline-block;
+	margin: 20px 0 0 10px;
+}
+
+.nav-container {
+	margin: 10px;
+	height: 30px;
+	width: 436px;
+	display: inline-block;
+	float: right;
+	color:#7b588e;
+}
+
+
+
+#content-container {
+	font-size: 14px;
+	color: #4c5159;
+	text-align: center;
+	width: 1050px; 
+}
+
+#footer-container {
+	height: 50px;
+	width: 100%;
+	background: #fff;
+	margin-left: -10px;
+}
+
+.footer-text {
+	font-size: 12px;
+	color: #7b588e;
+	text-align: center;
+	padding: 10px;
+}
+
+.gallery {
+	height: 470px;
+	width: 1020px;
+	background: #fff;
+	padding: 0;
+	margin: 0;
+}
+
+.text-content {
+	width: 750px;
+	margin-left: 125px;
+}
+
+.img1 {
+	background: url("../img/1/emotion1.png") no-repeat;
+	height: 450px;
+	width: 1000px;
+	overflow: hidden;
+	margin: 10px;
+	float: right;
+}
+
+.img1 {
+	background: url("../img/2/just-because1.png") no-repeat;
+	height: 450px;
+	width: 1000px;
+	overflow: hidden;
+	margin: 10px;
+	float: right;
+}
+
+.img1 {
+	background: url("../img/3/event1.png") no-repeat;
+	height: 450px;
+	width: 1000px;
+	overflow: hidden;
+	margin: 10px;
+	float: right;
+}
+
+ul li .special-color a {
+	color:#4c5159;
+}
