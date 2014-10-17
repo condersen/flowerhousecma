@@ -11,6 +11,7 @@
 	<head>
 		<title>Flower House | Home</title>
 		<link rel="stylesheet" href="css/flowerhousecss.css">
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	</head>
 		<div class="top-bar"></div>
@@ -21,15 +22,15 @@
 				<div class="nav-container">
 					<ul class="list-clean list-left nav-list">
 						<li><a href="index.php">Home</a></li>
-						<li><class="special-color"><a href="index.php">Flower Collection</a></li>
+						<li class="special-color"><a href="index.php">Flower Collection</a></li>
 						<li><a href="index.php"><img src="img/phone.png">(949) 300 2565</a></li>
 					</ul>
 				</div>
 			</div>
 			<div id="content-container">
 				<div id="button-bar">
-					<button id="button-left"><</button>
-					<button id="button-right">></button>
+					<button id="button-left"><img src="img/left-arrow.png"/></i></button>
+					<button id="button-right"><img src="img/right-arrow.png"/></i></button>
 				</div>
 				
 				<div id="gallery"></div><!--double check ids-->
@@ -65,6 +66,14 @@
 				return 0;
 			}
 		}
+		
+		function prev_image_index(){
+			if(current_image_index > 0){
+				return current_image_index - 1;
+			} else {
+				return images.length - 1;
+			}
+		}
 
 		$(function(){
 			slider_container = $('#gallery');
@@ -86,9 +95,13 @@
 				var current_image=$(slider_container.find('img.slider-img')[current_image_index]);
 
 				var next_image_log = next_image_index();
-
 				console.log(next_image_log);
-
+				
+				$("#button-left").prop('disabled',true);
+				
+				
+				
+				
 				current_image.animate(
 					{left:  '-1020'},
 					1000,
@@ -107,24 +120,26 @@
 							.removeClass('slider-right')
 							.addClass('slider-current')
 							.attr('style', '');
+							$("#button-left").prop('disabled',false);
 					}
 				);
-
+				
 				current_image_index++;
 				if(current_image_index == images.length){
 					current_image_index = 0;
 				}
+				
 			});
-
+			
 			$('#button-right').click(function(){
-				var next_image=$(slider_container.find('img.slider-img')[next_image_index()]);
+				var next_image=$(slider_container.find('img.slider-img')[prev_image_index()]);
 
 				var current_image=$(slider_container.find('img.slider-img')[current_image_index]);
-
+			
 				var next_image_log = next_image_index();
 
-				console.log(next_image_log);
-
+				console.log(current_image_index, next_image_log);
+				$("#button-right").prop('disabled',true);
 				current_image.animate(
 					{left:  '1020'},
 					1000,
@@ -147,6 +162,7 @@
 							.addClass('slider-current')
 							.removeClass('slider-left')
 							.attr('style', '');
+							$("#button-right").prop('disabled',false);
 					}
 				);
 
