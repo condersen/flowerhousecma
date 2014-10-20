@@ -49,7 +49,7 @@ body {
 	width: 1000px;
 }
 
-.logo-container a {
+.logo-container {
 	background: url("../img/logo.png");
 	height: 77px;
 	width: 210px;
@@ -61,7 +61,7 @@ body {
 .nav-container {
 	margin: 10px;
 	height: 30px;
-	width: 436px;
+	width: 437px;
 	display: inline-block;
 	float: right;
 	color:#7b588e;
@@ -73,7 +73,9 @@ body {
 	font-size: 14px;
 	color: #4c5159;
 	text-align: center;
-	width: 1050px; 
+	width: 1050px;
+	margin-bottom: 30px;
+	position: relative;
 }
 
 #footer-container {
@@ -98,6 +100,7 @@ body {
 	margin: 0;
 	position: relative;
 	overflow: hidden;
+	outline: 1px red;
 }
 
 #gallery img {
@@ -154,5 +157,6 @@ button {
 	position: absolute;
 	z-index: 10;
 	top: 330px;
-	left: 258px;
+	left: 0px;
 }
+

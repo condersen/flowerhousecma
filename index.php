@@ -18,7 +18,7 @@
 	<body>
 		<div id="layout-container">
 			<div id="header-container">
-				<div class="logo-container"><a href="index.php"></a></div>
+				<a href="index.php"><div class="logo-container"></div></a>
 				<div class="nav-container">
 					<ul class="list-clean list-left nav-list">
 						<li><a href="index.php">Home</a></li>
@@ -27,10 +27,11 @@
 					</ul>
 				</div>
 			</div>
+		</div>
 			<div id="content-container">
 				<div id="button-bar">
-					<button id="button-left"><img src="img/left-arrow.png"/></i></button>
-					<button id="button-right"><img src="img/right-arrow.png"/></i></button>
+					<button id="button-left"><img src="img/left-arrow.png"/></button>
+					<button id="button-right"><img src="img/right-arrow.png"/></button>
 				</div>
 				
 				<div id="gallery"></div><!--double check ids-->
@@ -57,6 +58,14 @@
 			"img/2/just-because1.png",
 			"img/3/event1.png"
 		];
+		
+/*		
+ 		var text = [
+			"<p>SHARE YOUR EMOTIONS<p>",
+			"<p>SEND FLOWERS JUST BECAUSE<P>",
+			"<p>MAKE YOUR EVENT SPECIAL<P>",
+		]
+*/
 		var slider_container;
 		var current_image_index = 0;
 		function next_image_index(){
@@ -90,7 +99,7 @@
 			}
 
 			$('#button-left').click(function(){
-				var next_image=$(slider_container.find('img.slider-img')[next_image_index()]);
+				var next_image=$(slider_container.find('img.slider-img')[prev_image_index()]);
 
 				var current_image=$(slider_container.find('img.slider-img')[current_image_index]);
 
@@ -102,44 +111,6 @@
 				
 				
 				
-				current_image.animate(
-					{left:  '-1020'},
-					1000,
-					function(){
-						current_image
-							.addClass('slider-right')
-							.removeClass('slider-current')
-							.attr('style', '');
-					}
-				);
-				next_image.animate(
-					{left: '0'},
-					1000,
-					function(){
-						next_image
-							.removeClass('slider-right')
-							.addClass('slider-current')
-							.attr('style', '');
-							$("#button-left").prop('disabled',false);
-					}
-				);
-				
-				current_image_index++;
-				if(current_image_index == images.length){
-					current_image_index = 0;
-				}
-				
-			});
-			
-			$('#button-right').click(function(){
-				var next_image=$(slider_container.find('img.slider-img')[prev_image_index()]);
-
-				var current_image=$(slider_container.find('img.slider-img')[current_image_index]);
-			
-				var next_image_log = next_image_index();
-
-				console.log(current_image_index, next_image_log);
-				$("#button-right").prop('disabled',true);
 				current_image.animate(
 					{left:  '1020'},
 					1000,
@@ -165,11 +136,52 @@
 							$("#button-right").prop('disabled',false);
 					}
 				);
-
+				
 				current_image_index--;
 				if(current_image_index == -1){
 					current_image_index = images.length - 1;
 				}
+				
+			});
+			
+			$('#button-right').click(function(){
+				var next_image=$(slider_container.find('img.slider-img')[next_image_index()]);
+
+				var current_image=$(slider_container.find('img.slider-img')[current_image_index]);
+			
+				var next_image_log = next_image_index();
+
+				console.log(current_image_index, next_image_log);
+				$("#button-right").prop('disabled',true);
+				
+				current_image.animate(
+					{left:  '-1020'},
+					1000,
+					function(){
+						current_image
+							.addClass('slider-right')
+							.removeClass('slider-current')
+							.attr('style', '');
+					}
+				);
+				
+				next_image.animate(
+					{left: '0'},
+					1000,
+					function(){
+						next_image
+							.removeClass('slider-right')
+							.addClass('slider-current')
+							.attr('style', '');
+							$("#button-left").prop('disabled',false);
+					}
+				);
+				
+				current_image_index++;
+				if(current_image_index == images.length){
+					current_image_index = 0;
+				}
+				
 			});
 		});
 	</script>
