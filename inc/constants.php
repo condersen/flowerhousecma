@@ -8,7 +8,7 @@
 		define("TBL_COLLECTIONS", "collections");
 		define("TBL_PICTURES", "pictures");
 	//project directories
-		define("DIR_JS", "/../js/");
-		define("DIR_CSS", "/../css/");
-		define("DIR_IMG", "/../img/");
+		define("DIR_JS", "js");
+		define("DIR_CSS", "css");
+		define("DIR_IMG", "img");
 ?>

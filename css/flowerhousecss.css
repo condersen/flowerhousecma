@@ -13,7 +13,6 @@ body {
 	height: 20px;
 	width: 100%;
 	background: #fff;
-	margin-left: -9px;
 }
 
 .list-clean, a{
@@ -46,7 +45,8 @@ body {
 
 #header-container {
 	height: 120px;
-	width: 1000px;
+	width: 100%;
+	overflow: hidden;
 }
 
 .logo-container {
@@ -71,6 +71,7 @@ body {
 
 #content-container {
 	font-size: 14px;
+	margin: 0 auto;
 	color: #4c5159;
 	text-align: center;
 	width: 1050px;
