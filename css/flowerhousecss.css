@@ -104,14 +104,6 @@ body {
 	outline: 1px red;
 }
 
-#gallery img {
-	position: absolute;
-	margin: 10px;
-	top: 0;
-	right: 0;
-	
-}
-
 
 .text-content {
 	width: 750px;
@@ -120,6 +112,13 @@ body {
 
 #gallery .slider-right {
 	left: 1020px;
+}
+
+.slider-img {
+	position: absolute;
+	margin: 10px;
+	top: 0;
+	right: 0;
 }
 
 .slider-left {
@@ -141,23 +140,31 @@ button {
 
 #button-right {
 	margin-top: 25px;
-	float: right;
+	margin-right: 35px;
 	font-size: 50px;
+	z-index: 20;
+	float: right;
 }
 
 #button-left {
 	margin-top: 25px;
+	margin-left: 35px;
 	font-size: 50px;
+	z-index: 20;
 	float: left;
 }
 
-#button-bar {
+.text-box {
 	width: 1020px;
 	height: 100px;
 	background: rgba(190, 194, 199,0.65);
-	position: absolute;
 	z-index: 10;
 	top: 330px;
 	left: 0px;
 }
 
+#gallery-box {
+	position: absolute;
+	top: -330px;
+	left: -10px;
+}
